@@ -1,0 +1,8 @@
+{
+  "name": "@hrithik73/rn-starter",
+  "version": "0.0.1",
+  "description": "React Native Boilerplate",
+  "repository": "git@github.com:hrithik73/rn-starter",
+  "author": "Hritik Singh <shrithik404@gmail.com>",
+  "license": "MIT"
+}
