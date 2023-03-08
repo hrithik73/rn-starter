@@ -1,5 +1,5 @@
+import MainNavigator from '@src/navigations/MainNavigator';
 import React from 'react';
-import MainNavigator from './src/navigations/MainNavigator';
 
 const App = () => {
   return <MainNavigator />;

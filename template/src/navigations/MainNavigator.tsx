@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Login from '../screens/auth/Login';
+import Login from '@src/screens/auth/Login';
 
 const Auth = createNativeStackNavigator();
 
