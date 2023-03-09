@@ -8,16 +8,17 @@
 npx react-native init TestApp --template https://github.com/hrithik73/rn-starter
 ```
 
-Make sure to replace the ``TestApp` with your App Name
+Make sure to replace the ``TestApp``` with your App Name
 
-### Libraries configured
+### Features and Libraries inluded
 
 - React-Navigation (V6)
   - Stack,Tab and Drawer
-- Nativebase
-- Redux Toolkit
-- Axios
+- React Native Paper (UI library)
+- Redux Toolkit (State Management)
+- Axios (For Data fetching)
 - React Native Vector Icon
+- Absolute imports
 
 ## Screens
 
