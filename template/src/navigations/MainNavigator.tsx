@@ -1,4 +1,3 @@
-import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { screenName } from '@src/constants/screen';
 import Login from '@src/screens/auth/Login';
@@ -24,10 +23,6 @@ const AuthNavigator = () => {
 };
 
 const MainNavigator = () => {
-  return (
-    <NavigationContainer>
-      <AuthNavigator />
-    </NavigationContainer>
-  );
+  return <AuthNavigator />;
 };
 export default MainNavigator;
