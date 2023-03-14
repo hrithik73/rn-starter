@@ -1,13 +1,15 @@
+import { Text, View } from 'react-native';
+import { Switch } from 'react-native-paper';
+// import { useTheme } from '@react-navigation/native';
+
 import { toggleTheme } from '@src/redux/actions';
 import { useAppDispatch, useAppSelector } from '@src/redux/store';
-import { Text, View } from 'react-native';
-import { Switch, useTheme } from 'react-native-paper';
+import useTheme from '@src/hooks/useTheme';
 
 const Login = () => {
   const dispatch = useAppDispatch();
   const { isDark } = useAppSelector(state => state.theme);
   const theme = useTheme();
-  console.log(theme.colors.primary);
 
   return (
     <View
@@ -24,7 +26,7 @@ const Login = () => {
           dispatch(toggleTheme());
         }}
       />
-      <Text style={{ color: theme.colors.primary }}>Switch Theme</Text>
+      <Text style={{ color: theme.colors.text }}>Switch Theme</Text>
     </View>
   );
 };

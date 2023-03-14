@@ -1,28 +1,15 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import {
-  NavigationContainer,
-  DarkTheme as NavigationDarkTheme,
-  DefaultTheme as NavigationDefaultTheme,
-} from '@react-navigation/native';
-import {
-  MD3DarkTheme as PaperDarkTheme,
-  DefaultTheme as PaperDefaultTheme,
-  Provider as PaperProvider,
-} from 'react-native-paper';
+import { Provider as PaperProvider } from 'react-native-paper';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import MainNavigator from '@src/navigations/MainNavigator';
 import { store } from '@src/redux/store';
-
-const CombinedDefaultTheme = {
-  ...PaperDefaultTheme,
-  ...NavigationDefaultTheme,
-};
-const CombinedDarkTheme = { ...PaperDarkTheme, ...NavigationDarkTheme };
+import { DarkTheme, DefaultTheme } from '@src/theme/theme';
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const theme = isDarkTheme ? CombinedDarkTheme : CombinedDefaultTheme;
+  const theme = isDarkTheme ? DarkTheme : DefaultTheme;
 
   useEffect(() => {
     // Using redux store outside provider

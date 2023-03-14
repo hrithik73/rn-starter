@@ -1,14 +1,14 @@
 ## React-Native Starter
 
-### Production ready react-native starter with commonly used libraries configured out of the box
+Production ready react-native starter with commonly used libraries configured out of the box
 
 ### Usages
 
 ```
-npx react-native init TestApp --template https://github.com/hrithik73/rn-starter
+npx react-native init MyApp --template https://github.com/hrithik73/rn-starter
 ```
 
-Make sure to replace the ``TestApp``` with your App Name
+Make sure to replace the `MyApp` with your App Name
 
 ### Features and Libraries inluded
 
@@ -17,10 +17,15 @@ Make sure to replace the ``TestApp``` with your App Name
 - React Native Paper (UI library)
 - Redux Toolkit (State Management)
 - Axios (For Data fetching)
-- React Native Vector Icon
+- react-native-vector-icon
 - Absolute imports
 
 ## Screens
 
 - Login Screen
 - SigUp Screen
+
+### TODOs
+
+- [ ] Internationalization (i18n)
+- [ ]
