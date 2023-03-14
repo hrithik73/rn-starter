@@ -9,12 +9,12 @@
 const lightColors = {
   primary: 'rgb(255, 45, 85)',
   background: '#ffff',
-  text: '#0000',
+  text: '#000000',
 };
 const darkColors = {
   primary: 'rgb(255,45,85)',
   background: '#0000',
-  text: '#ffff',
+  text: '#ffffff',
 };
 
 export { lightColors, darkColors };
