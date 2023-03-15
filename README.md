@@ -28,4 +28,7 @@ Make sure to replace the `MyApp` with your App Name
 ### TODOs
 
 - [ ] Internationalization (i18n)
-- [ ]
+- [ ] Redux Persist
+- [ ] Homepage with Tab
+- [ ] Login and SignUp Screen
+- [ ] React Query

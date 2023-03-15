@@ -11,8 +11,8 @@ export const screenName = {
     name: 'Home',
     headerTitle: 'Home',
   },
-  search: {
-    name: 'Search',
-    headerTitle: 'Search',
+  setting: {
+    name: 'Setting',
+    headerTitle: 'Setting',
   },
 };
