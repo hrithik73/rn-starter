@@ -1,6 +1,6 @@
 const images = {
-  logo: require('../assets/logo.png'),
-  logo_dark: require('../assets/logo_dark.png'),
+  logo: require('../assets/images/logo.png'),
+  logo_dark: require('../assets/images/logo_dark.png'),
 };
 
 export default images;

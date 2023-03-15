@@ -50,6 +50,6 @@ const HomeNavigator = () => {
 };
 
 const MainNavigator = () => {
-  return <HomeNavigator />;
+  return <AuthNavigator />;
 };
 export default MainNavigator;
