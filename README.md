@@ -1,5 +1,7 @@
 ## React-Native Starter
 
+![Logo](./template/src/assets/logo.png)
+
 Production ready react-native starter with commonly used libraries configured out of the box
 
 ### Usages
