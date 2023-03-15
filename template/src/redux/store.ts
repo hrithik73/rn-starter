@@ -1,10 +1,18 @@
 import { AnyAction, configureStore } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import * as thunkMiddleware from 'redux-thunk';
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+  persistStore,
+} from 'redux-persist';
 
 import rootReducer from './reducers';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-
 let middlewares = [thunkMiddleware.default];
 
 if (__DEV__) {
@@ -20,11 +28,16 @@ if (__DEV__) {
 export const store = configureStore({
   reducer: rootReducer,
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(middlewares),
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat(middlewares),
 });
 
+export const persistor = persistStore(store);
+
 export type RootState = ReturnType<typeof store.getState>;
-// export type AppDispatch = typeof store.dispatch;
 
 export type TypedDispatch = ThunkDispatch<RootState, any, AnyAction>;
 export type TypedThunk<ReturnType = void> = ThunkAction<

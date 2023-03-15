@@ -1,6 +1,14 @@
+import images from '@src/config/image';
 import useTheme from '@src/hooks/useTheme';
 import React from 'react';
-import { View, StyleSheet, Text, Pressable, Linking } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  Pressable,
+  Linking,
+  Image,
+} from 'react-native';
 
 const REPO_URL = 'https://github.com/hrithik73/rn-starter';
 
@@ -13,10 +21,9 @@ const Home = () => {
       console.error("Couldn't load page", err),
     );
   };
-
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Hello,</Text>
+      <Image source={theme.dark ? images.logo : images.logo_dark} />
       <Text style={styles.subheading}>
         Please visit the README of this repo for more info
       </Text>
