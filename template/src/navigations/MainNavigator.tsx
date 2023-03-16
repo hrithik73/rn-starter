@@ -8,6 +8,7 @@ import SingUp from '@src/screens/auth/SignUp';
 import Home from '@src/screens/home/Home';
 import Setting from '@src/screens/home/Setting';
 import Query from '@src/screens/home/Query';
+import { useState } from 'react';
 
 const Auth = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -61,6 +62,7 @@ const HomeNavigator = () => {
 };
 
 const MainNavigator = () => {
-  return <AuthNavigator />;
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  return <>{isLoggedIn ? <HomeNavigator /> : <AuthNavigator />}</>;
 };
 export default MainNavigator;
