@@ -27,7 +27,7 @@ Make sure to replace the `MyApp` with your App Name
 ## Screens
 
 - Login Screen
-- SigUp Screen
+- SignUp Screen
 
 ### TODOs
 
