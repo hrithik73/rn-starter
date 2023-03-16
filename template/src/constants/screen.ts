@@ -19,4 +19,4 @@ export const screenName = {
     name: 'QeuryExample',
     headerTitle: 'Star War Characters',
   },
-};
+} as const;

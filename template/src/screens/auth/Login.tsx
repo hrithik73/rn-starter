@@ -1,29 +1,28 @@
-import Button from '@src/components/Buttons';
-import Input from '@src/components/Input';
-import images from '@src/config/image';
-import useTheme from '@src/hooks/useTheme';
+import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import AntDesign from 'react-native-vector-icons/AntDesign';
 import {
   Image,
   KeyboardAvoidingView,
   Platform,
   Pressable,
-  SafeAreaView,
-  ScrollView,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
 import { TextInput } from 'react-native-paper';
-import { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+
+import Button from '@src/components/Buttons';
+import Input from '@src/components/Input';
+import images from '@src/config/image';
+import useTheme from '@src/hooks/useTheme';
+import { AuthStackNavigatorProps } from '@src/types/navigation';
 
 const Login = () => {
   const theme = useTheme();
   const styles = makeStyles(theme.colors);
   const [passVisible, setPassVisible] = useState(false);
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<AuthStackNavigatorProps>();
 
   const { control, handleSubmit } = useForm({
     mode: 'onBlur',

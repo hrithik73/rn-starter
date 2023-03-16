@@ -9,9 +9,10 @@ import SingUp from '@src/screens/auth/SignUp';
 import Home from '@src/screens/home/Home';
 import Query from '@src/screens/home/Query';
 import Setting from '@src/screens/home/Setting';
+import { AuthStackType, RootStackType } from '@src/types/navigation';
 
-const Auth = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+const Auth = createNativeStackNavigator<AuthStackType>();
+const Tab = createBottomTabNavigator<RootStackType>();
 
 const AuthNavigator = () => {
   return (
