@@ -15,4 +15,8 @@ export const screenName = {
     name: 'Setting',
     headerTitle: 'Setting',
   },
+  queryExample: {
+    name: 'QeuryExample',
+    headerTitle: 'Star War Characters',
+  },
 };

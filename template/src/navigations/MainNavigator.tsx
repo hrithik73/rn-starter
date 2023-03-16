@@ -7,6 +7,7 @@ import Login from '@src/screens/auth/Login';
 import SingUp from '@src/screens/auth/SignUp';
 import Home from '@src/screens/home/Home';
 import Setting from '@src/screens/home/Setting';
+import Query from '@src/screens/home/Query';
 
 const Auth = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -36,6 +37,16 @@ const HomeNavigator = () => {
         component={Home}
         options={{
           tabBarIcon: ({ ...props }) => <AntDesign name="home" {...props} />,
+        }}
+      />
+      <Tab.Screen
+        name={screenName.queryExample.name}
+        component={Query}
+        options={{
+          headerTitle: screenName.queryExample.headerTitle,
+          tabBarIcon: ({ ...props }) => (
+            <AntDesign name="codesquare" {...props} />
+          ),
         }}
       />
       <Tab.Screen

@@ -18,9 +18,9 @@ Make sure to replace the `MyApp` with your App Name
   - Stack,Tab and Drawer
 - React Native Paper (UI library)
 - Redux Toolkit (State Management)
-- Axios (For Data fetching)
+- Axios + React Query For Data fetching
 - react-native-vector-icon
-- Absolute imports
+- Absolute Imports
 
 ## Screens
 
@@ -30,4 +30,3 @@ Make sure to replace the `MyApp` with your App Name
 ### TODOs
 
 - [ ] Internationalization (i18n)
-- [ ] React Query

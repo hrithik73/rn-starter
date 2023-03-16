@@ -27,7 +27,7 @@ const Input = ({ name, placeholder, control, ...rest }: InputProps) => {
           <View style={styles.container}>
             <TextInput
               value={value}
-              onChange={onChange}
+              onChangeText={onChange}
               onBlur={onBlur}
               placeholder={placeholder}
               {...rest}

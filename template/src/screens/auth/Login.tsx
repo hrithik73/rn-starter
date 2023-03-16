@@ -8,6 +8,7 @@ import {
   Image,
   KeyboardAvoidingView,
   Platform,
+  Pressable,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -16,15 +17,21 @@ import {
 } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
   const theme = useTheme();
   const styles = makeStyles(theme.colors);
   const [passVisible, setPassVisible] = useState(false);
+  const navigation = useNavigation<any>();
 
   const { control, handleSubmit } = useForm({
     mode: 'onBlur',
   });
+
+  const loginHandler = (data: any) => {
+    console.log(data);
+  };
 
   return (
     <KeyboardAvoidingView
@@ -40,6 +47,10 @@ const Login = () => {
           required: {
             value: true,
             message: 'Email is required',
+          },
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: 'invalid email address',
           },
         }}
       />
@@ -61,14 +72,19 @@ const Login = () => {
             value: true,
             message: 'Password is required',
           },
+          minLength: {
+            value: 8,
+            message: 'Password must be atleast 8 charaters',
+          },
         }}
       />
-      <Button
-        title="Login"
-        onPress={() => {
-          console.log('Login');
-        }}
-      />
+      <Button title="Login" onPress={handleSubmit(loginHandler)} />
+      <View style={styles.signUpContainer}>
+        <Text>Don't have an account?</Text>
+        <Pressable onPress={() => navigation.navigate('SignUp')}>
+          <Text style={styles.signUpText}>SignUp</Text>
+        </Pressable>
+      </View>
     </KeyboardAvoidingView>
   );
 };
@@ -82,6 +98,14 @@ const makeStyles = (colors: any) =>
     },
     heading: {
       color: colors.text,
+    },
+    signUpContainer: {
+      flexDirection: 'row',
+      marginVertical: 15,
+      gap: 10,
+    },
+    signUpText: {
+      color: 'blue',
     },
   });
 
