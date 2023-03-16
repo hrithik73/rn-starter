@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useState } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
@@ -6,8 +7,8 @@ import { screenName } from '@src/constants/screen';
 import Login from '@src/screens/auth/Login';
 import SingUp from '@src/screens/auth/SignUp';
 import Home from '@src/screens/home/Home';
-import Setting from '@src/screens/home/Setting';
 import Query from '@src/screens/home/Query';
+import Setting from '@src/screens/home/Setting';
 
 const Auth = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -61,6 +62,7 @@ const HomeNavigator = () => {
 };
 
 const MainNavigator = () => {
-  return <AuthNavigator />;
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  return <>{isLoggedIn ? <HomeNavigator /> : <AuthNavigator />}</>;
 };
 export default MainNavigator;
