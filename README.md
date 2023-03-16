@@ -1,6 +1,7 @@
 ## React-Native Starter
 
 ![Logo](./template/src/assets/images/logo.png)
+
 An Opinionated react-native templated with commonly used libraries to kickstart your react-native app development
 
 ### Usages
