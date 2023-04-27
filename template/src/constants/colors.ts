@@ -13,7 +13,7 @@ const lightColors = {
 };
 const darkColors = {
   primary: 'rgb(255,45,85)',
-  background: '#0000',
+  background: '#000',
   text: '#ffffff',
 };
 
