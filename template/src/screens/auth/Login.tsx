@@ -15,11 +15,11 @@ import { TextInput } from 'react-native-paper';
 import Button from '@src/components/Buttons';
 import Input from '@src/components/Input';
 import images from '@src/config/image';
-import useTheme from '@src/hooks/useTheme';
 import { AuthStackNavigatorProps } from '@src/types/navigation';
+import { useAppTheme } from '@src/theme/theme';
 
 const Login = () => {
-  const theme = useTheme();
+  const theme = useAppTheme();
   const styles = makeStyles(theme.colors);
   const [passVisible, setPassVisible] = useState(false);
   const navigation = useNavigation<AuthStackNavigatorProps>();

@@ -5,6 +5,7 @@ import {
 import {
   MD3DarkTheme as PaperDarkTheme,
   DefaultTheme as PaperDefaultTheme,
+  useTheme,
 } from 'react-native-paper';
 import { darkColors, lightColors } from '@src/constants/colors';
 
@@ -26,5 +27,9 @@ const CombinedDarkTheme = {
     ...darkColors,
   },
 };
+
+export type AppTheme = typeof CombinedDarkTheme;
+
+export const useAppTheme = () => useTheme<AppTheme>();
 
 export { CombinedDarkTheme as DarkTheme, CombinedDefaultTheme as DefaultTheme };

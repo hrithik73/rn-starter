@@ -4,12 +4,12 @@ import { Switch } from 'react-native-paper';
 
 import { toggleTheme } from '@src/redux/actions';
 import { useAppDispatch, useAppSelector } from '@src/redux/store';
-import useTheme from '@src/hooks/useTheme';
+import { useAppTheme } from '@src/theme/theme';
 
 const Setting = () => {
   const dispatch = useAppDispatch();
   const { isDark } = useAppSelector(state => state.theme);
-  const theme = useTheme();
+  const theme = useAppTheme();
   const styles = makeStyles(theme.colors);
 
   return (

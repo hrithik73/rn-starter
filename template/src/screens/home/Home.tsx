@@ -1,5 +1,5 @@
 import images from '@src/config/image';
-import useTheme from '@src/hooks/useTheme';
+import { useAppTheme } from '@src/theme/theme';
 import React from 'react';
 import {
   View,
@@ -13,7 +13,7 @@ import {
 const REPO_URL = 'https://github.com/hrithik73/rn-starter';
 
 const Home = () => {
-  const theme = useTheme();
+  const theme = useAppTheme();
   const styles = makeStyles(theme.colors);
 
   const openRepoLink = () => {

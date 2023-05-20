@@ -1,9 +1,8 @@
 import { Controller, ControllerProps } from 'react-hook-form';
 import { View } from 'react-native';
 import { HelperText, TextInput, TextInputProps } from 'react-native-paper';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import useTheme from '@src/hooks/useTheme';
 import makeStyles from './styles';
+import { useAppTheme } from '@src/theme/theme';
 
 type InputProps = {
   name: string;
@@ -13,7 +12,7 @@ type InputProps = {
   Omit<ControllerProps, 'render'>;
 
 const Input = ({ name, placeholder, control, ...rest }: InputProps) => {
-  const theme = useTheme();
+  const theme = useAppTheme();
   const styles = makeStyles(theme.colors);
 
   return (

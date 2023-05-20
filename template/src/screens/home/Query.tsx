@@ -4,7 +4,7 @@ import { useInfiniteQuery } from 'react-query';
 
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { ActivityIndicator, MD2Colors } from 'react-native-paper';
-import useTheme from '@src/hooks/useTheme';
+import { useAppTheme } from '@src/theme/theme';
 
 const URL = 'https://swapi.dev/api/people';
 
@@ -13,7 +13,7 @@ const getPeople = async (url: string = URL) => {
 };
 
 const QueryExample = () => {
-  const theme = useTheme();
+  const theme = useAppTheme();
   const styles = makeStyles(theme.colors);
 
   const { data, isLoading, fetchNextPage, isFetchingNextPage, hasNextPage } =
@@ -24,7 +24,6 @@ const QueryExample = () => {
         }
       },
     });
-  console.log(data?.pages[0].data.results);
 
   if (isLoading) {
     return (
