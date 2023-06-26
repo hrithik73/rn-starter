@@ -1,2 +1,2 @@
 // Define all the actions here
-export { toggleTheme } from './slices/theme';
+export { toggleTheme, login, logout } from './slices/user';

@@ -1,17 +1,8 @@
-import { combineReducers } from '@reduxjs/toolkit';
-import {
-  persistStore,
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { combineReducers } from '@reduxjs/toolkit';
+import { persistReducer } from 'redux-persist';
 
-import theme from './slices/theme';
+import user from './slices/user';
 
 const persistConfig = {
   key: 'root',
@@ -20,7 +11,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  theme: theme,
+  user,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

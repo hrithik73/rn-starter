@@ -1,3 +1,6 @@
+/**
+ * Import necessary dependencies and components
+ */
 import { NavigationContainer } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'react-native';
@@ -6,10 +9,14 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
+// App level configuration
 import MainNavigator from '@src/navigations/MainNavigator';
 import { persistor, store } from '@src/redux/store';
 import { DarkTheme, DefaultTheme } from '@src/theme/theme';
 
+/**
+ * Main App component
+ */
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const theme = isDarkTheme ? DarkTheme : DefaultTheme;
@@ -17,11 +24,15 @@ const App = () => {
   const queryClient = new QueryClient();
 
   useEffect(() => {
-    // Using redux store outside provider
-    const storeListner = store.subscribe(() => {
-      setIsDarkTheme(store.getState().theme.isDark);
+    // Subscribe to the redux store to listen for changes in the theme
+    const storeListener = store.subscribe(() => {
+      setIsDarkTheme(store.getState().user.isDarkTheme);
     });
-    return storeListner;
+
+    // Cleanup the subscription when component unmounts
+    return () => {
+      storeListener();
+    };
   });
 
   return (

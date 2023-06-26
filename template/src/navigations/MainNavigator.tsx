@@ -1,18 +1,30 @@
+import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useState } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { screenName } from '@src/constants/screen';
+import { useAppSelector } from '@src/redux/store';
 import Login from '@src/screens/auth/Login';
 import SingUp from '@src/screens/auth/SignUp';
 import Home from '@src/screens/home/Home';
 import Query from '@src/screens/home/Query';
 import Setting from '@src/screens/home/Setting';
 import { AuthStackType, RootStackType } from '@src/types/navigation';
+import { BOTTOM_TAB_ICON_SIZE } from '@src/constants/appConstant';
 
 const Auth = createNativeStackNavigator<AuthStackType>();
 const Tab = createBottomTabNavigator<RootStackType>();
+
+interface TabIconProps {
+  name: string;
+  color: string;
+}
+
+const TabIcon = ({ name, color }: TabIconProps) => {
+  return <Ionicons name={name} size={BOTTOM_TAB_ICON_SIZE} color={color} />;
+};
 
 const AuthNavigator = () => {
   return (
@@ -38,7 +50,9 @@ const HomeNavigator = () => {
         name={screenName.home.name}
         component={Home}
         options={{
-          tabBarIcon: ({ ...props }) => <AntDesign name="home" {...props} />,
+          tabBarIcon: ({ focused, color }) => (
+            <TabIcon name={focused ? 'home' : 'home-outline'} color={color} />
+          ),
         }}
       />
       <Tab.Screen
@@ -46,8 +60,8 @@ const HomeNavigator = () => {
         component={Query}
         options={{
           headerTitle: screenName.queryExample.headerTitle,
-          tabBarIcon: ({ ...props }) => (
-            <AntDesign name="codesquare" {...props} />
+          tabBarIcon: ({ focused, color }) => (
+            <TabIcon name={focused ? 'home' : 'home-outline'} color={color} />
           ),
         }}
       />
@@ -55,7 +69,12 @@ const HomeNavigator = () => {
         name={screenName.setting.name}
         component={Setting}
         options={{
-          tabBarIcon: ({ ...props }) => <AntDesign name="setting" {...props} />,
+          tabBarIcon: ({ focused, color }) => (
+            <TabIcon
+              name={focused ? 'settings' : 'settings-outline'}
+              color={color}
+            />
+          ),
         }}
       />
     </Tab.Navigator>
@@ -63,7 +82,8 @@ const HomeNavigator = () => {
 };
 
 const MainNavigator = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const { isLoggedIn } = useAppSelector(state => state.user);
+
   return <>{isLoggedIn ? <HomeNavigator /> : <AuthNavigator />}</>;
 };
 export default MainNavigator;

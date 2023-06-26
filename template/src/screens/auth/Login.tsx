@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -17,11 +18,15 @@ import Input from '@src/components/Input';
 import images from '@src/config/image';
 import { AuthStackNavigatorProps } from '@src/types/navigation';
 import { useAppTheme } from '@src/theme/theme';
+import { useAppDispatch } from '@src/redux/store';
+import { login } from '@src/redux/actions';
 
 const Login = () => {
   const theme = useAppTheme();
   const styles = makeStyles(theme.colors);
   const [passVisible, setPassVisible] = useState(false);
+  const dispatch = useAppDispatch();
+
   const navigation = useNavigation<AuthStackNavigatorProps>();
 
   const { control, handleSubmit } = useForm({
@@ -30,6 +35,7 @@ const Login = () => {
 
   const loginHandler = (data: any) => {
     console.log(data);
+    dispatch(login());
   };
 
   return (
