@@ -1,14 +1,13 @@
-import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { BOTTOM_TAB_ICON_SIZE } from '@src/constants/appConstant';
 import { screenName } from '@src/constants/screen';
 import { useAppSelector } from '@src/redux/store';
-import Home from '@src/screens/home/Home';
-import Setting from '@src/screens/home/Setting';
 import { RootStackType } from '@src/types/navigation';
 import AuthNavigator from './AuthNavigator';
+import { Home, Setting } from './routes';
 
 const Tab = createBottomTabNavigator<RootStackType>();
 

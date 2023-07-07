@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { Switch } from 'react-native-paper';
 
+import Button from '@src/components/Buttons';
 import { toggleTheme } from '@src/redux/actions';
 import { useAppDispatch, useAppSelector } from '@src/redux/store';
-import { AppTheme, useAppTheme } from '@src/theme/theme';
-import Button from '@src/components/Buttons';
+import { useAppTheme } from '@src/theme/theme';
+import makeStyles from './styles';
 
 const Setting = () => {
   const dispatch = useAppDispatch();
@@ -31,27 +32,4 @@ const Setting = () => {
   );
 };
 
-const makeStyles = (theme: AppTheme) =>
-  StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    menu: {
-      flex: 1,
-      margin: 10,
-    },
-    logoutBtn: {
-      margin: 10,
-      marginTop: 40,
-    },
-    row: {
-      padding: 10,
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 10,
-      borderWidth: 0.2,
-      borderRadius: 10,
-      borderColor: theme.colors.text,
-    },
-  });
 export default Setting;

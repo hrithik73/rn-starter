@@ -1,28 +1,23 @@
 import images from '@src/config/image';
 import { useAppTheme } from '@src/theme/theme';
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Text,
-  Pressable,
-  Linking,
-  Image,
-} from 'react-native';
+import { Image, Linking, Pressable, Text, View } from 'react-native';
 
 import { API_URL } from '@env';
+import makeStyles from './styles';
 
 const REPO_URL = 'https://github.com/hrithik73/rn-starter';
 
 const Home = () => {
   const theme = useAppTheme();
-  const styles = makeStyles(theme.colors);
+  const styles = makeStyles(theme);
 
   const openRepoLink = () => {
     Linking.openURL(REPO_URL).catch(err =>
       console.error("Couldn't load page", err),
     );
   };
+
   return (
     <View style={styles.container}>
       <Image source={theme.dark ? images.logo : images.logo_dark} />
@@ -37,26 +32,4 @@ const Home = () => {
   );
 };
 
-const makeStyles = (colors: any) =>
-  StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    heading: {
-      color: colors.text,
-      fontSize: 22,
-      fontWeight: 'bold',
-    },
-    subheading: {
-      color: colors.text,
-      fontSize: 16,
-      marginVertical: 15,
-    },
-    linkText: {
-      color: 'blue',
-    },
-    linkContainer: {},
-  });
 export default Home;
