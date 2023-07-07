@@ -7,11 +7,14 @@ const makeStyles = (theme: AppTheme) =>
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
+      paddingHorizontal: 15,
     },
     heading: {
       color: theme.colors.text,
-      fontSize: 22,
-      fontWeight: 'bold',
+      fontSize: 18,
+      fontWeight: '600',
+      marginVertical: 20,
+      marginBottom: 20,
     },
     subheading: {
       color: theme.colors.text,
@@ -22,6 +25,22 @@ const makeStyles = (theme: AppTheme) =>
       color: 'blue',
     },
     linkContainer: {},
+    exampleContainer: {
+      width: '100%',
+    },
+    cardContainer: {
+      height: 50,
+      marginVertical: 10,
+      borderRadius: 10,
+      justifyContent: 'center',
+      alignItems: 'center',
+      // width: '100%',
+      backgroundColor: theme.colors.secondaryContainer,
+    },
+    cardTitle: {
+      fontSize: 16,
+      color: theme.colors.text,
+    },
   });
 
 export default makeStyles;

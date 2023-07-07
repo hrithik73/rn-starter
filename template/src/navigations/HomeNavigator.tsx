@@ -1,0 +1,23 @@
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Home } from './routes';
+import { ExampleScreens } from '@src/constants/screen';
+
+const HomeStack = createNativeStackNavigator();
+
+const HomeNavigator = () => {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen name={'Home'} component={Home} />
+      {ExampleScreens.map(item => {
+        return (
+          <HomeStack.Screen
+            key={item.id}
+            name={item.name}
+            component={item.component}
+          />
+        );
+      })}
+    </HomeStack.Navigator>
+  );
+};
+export default HomeNavigator;

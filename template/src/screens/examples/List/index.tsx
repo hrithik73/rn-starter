@@ -1,10 +1,11 @@
-import React from 'react';
 import axios from 'axios';
+import React from 'react';
 import { useInfiniteQuery } from 'react-query';
 
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { ActivityIndicator, MD2Colors } from 'react-native-paper';
 import { useAppTheme } from '@src/theme/theme';
+import { FlatList, Text, View } from 'react-native';
+import { ActivityIndicator, MD2Colors } from 'react-native-paper';
+import makeStyles from './styles';
 
 const URL = 'https://swapi.dev/api/people';
 
@@ -12,9 +13,9 @@ const getPeople = async (url: string = URL) => {
   return axios.get(url);
 };
 
-const QueryExample = () => {
+const List = () => {
   const theme = useAppTheme();
-  const styles = makeStyles(theme.colors);
+  const styles = makeStyles(theme);
 
   const { data, isLoading, fetchNextPage, isFetchingNextPage, hasNextPage } =
     useInfiniteQuery('people', ({ pageParam }) => getPeople(pageParam), {
@@ -70,28 +71,4 @@ const QueryExample = () => {
   );
 };
 
-const makeStyles = (colors: any) =>
-  StyleSheet.create({
-    container: {},
-    cardContainer: {
-      padding: 25,
-      margin: 5,
-      borderRadius: 15,
-      backgroundColor: '#c1c1c1c1',
-    },
-    name: {
-      color: colors.text,
-      fontSize: 15,
-      fontWeight: '500',
-    },
-    loader: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    loaderText: {
-      fontSize: 20,
-    },
-  });
-
-export default QueryExample;
+export default List;

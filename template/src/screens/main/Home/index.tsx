@@ -1,12 +1,24 @@
 import images from '@src/config/image';
 import { useAppTheme } from '@src/theme/theme';
 import React from 'react';
-import { Image, Linking, Pressable, Text, View } from 'react-native';
+import { FlatList, Image, Linking, Pressable, Text, View } from 'react-native';
 
 import { API_URL } from '@env';
 import makeStyles from './styles';
+import { ExampleScreens } from '@src/constants/screen';
+import { Divider } from 'react-native-paper';
 
 const REPO_URL = 'https://github.com/hrithik73/rn-starter';
+
+const ScreenCard = ({ item }: any) => {
+  const theme = useAppTheme();
+  const styles = makeStyles(theme);
+  return (
+    <View style={styles.cardContainer}>
+      <Text style={styles.cardTitle}>{item.name}</Text>
+    </View>
+  );
+};
 
 const Home = () => {
   const theme = useAppTheme();
@@ -26,8 +38,17 @@ const Home = () => {
       </Text>
       <Pressable style={styles.linkContainer} onPress={openRepoLink}>
         <Text style={styles.linkText}>{REPO_URL}</Text>
-        <Text style={styles.subheading}> API_URL loaded from :- {API_URL}</Text>
       </Pressable>
+      <Text style={styles.heading}>
+        List of Examples to implemented in the app
+      </Text>
+      <FlatList
+        style={styles.exampleContainer}
+        data={ExampleScreens}
+        renderItem={({ item }) => {
+          return <ScreenCard item={item} />;
+        }}
+      />
     </View>
   );
 };

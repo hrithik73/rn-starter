@@ -1,3 +1,5 @@
+import List from '@src/screens/examples/List';
+
 export const screenName = {
   login: {
     name: 'Login',
@@ -20,3 +22,11 @@ export const screenName = {
     headerTitle: 'Star War Characters',
   },
 } as const;
+
+export const ExampleScreens = [
+  {
+    id: 1,
+    name: 'List',
+    component: List,
+  },
+];
