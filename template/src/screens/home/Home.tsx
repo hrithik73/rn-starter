@@ -10,6 +10,8 @@ import {
   Image,
 } from 'react-native';
 
+import { API_URL } from '@env';
+
 const REPO_URL = 'https://github.com/hrithik73/rn-starter';
 
 const Home = () => {
@@ -29,6 +31,7 @@ const Home = () => {
       </Text>
       <Pressable style={styles.linkContainer} onPress={openRepoLink}>
         <Text style={styles.linkText}>{REPO_URL}</Text>
+        <Text style={styles.subheading}> API_URL loaded from :- {API_URL}</Text>
       </Pressable>
     </View>
   );
