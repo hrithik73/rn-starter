@@ -16,15 +16,6 @@ const makeStyles = (theme: AppTheme) =>
       marginVertical: 20,
       marginBottom: 20,
     },
-    subheading: {
-      color: theme.colors.text,
-      fontSize: 16,
-      marginVertical: 15,
-    },
-    linkText: {
-      color: 'blue',
-    },
-    linkContainer: {},
     exampleContainer: {
       width: '100%',
     },

@@ -7,12 +7,12 @@ const makeStyles = (theme: AppTheme) =>
       flex: 1,
     },
     menu: {
-      flex: 1,
       margin: 10,
+      marginTop: 30,
     },
     logoutBtn: {
       margin: 10,
-      marginTop: 40,
+      marginTop: 20,
     },
     row: {
       padding: 10,
@@ -23,6 +23,18 @@ const makeStyles = (theme: AppTheme) =>
       borderRadius: 10,
       borderColor: theme.colors.text,
     },
+    subheading: {
+      color: theme.colors.text,
+      fontSize: 16,
+      marginVertical: 15,
+    },
+    linkText: {
+      color: 'blue',
+      textDecorationStyle: 'solid',
+      textDecorationLine: 'underline',
+      // textDecorationColor: 'red',
+    },
+    linkContainer: {},
   });
 
 export default makeStyles;

@@ -1,3 +1,5 @@
+import { Home } from '@src/navigations/routes';
+import Form from '@src/screens/examples/Form';
 import List from '@src/screens/examples/List';
 
 export const screenName = {
@@ -28,5 +30,10 @@ export const ExampleScreens = [
     id: 1,
     name: 'List',
     component: List,
+  },
+  {
+    id: 2,
+    name: 'Form',
+    component: Form,
   },
 ];

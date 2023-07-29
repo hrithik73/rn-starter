@@ -7,7 +7,8 @@ import { screenName } from '@src/constants/screen';
 import { useAppSelector } from '@src/redux/store';
 import { RootStackType } from '@src/types/navigation';
 import AuthNavigator from './AuthNavigator';
-import { Home, Setting } from './routes';
+import HomeNavigator from './HomeNavigator';
+import { Setting } from './routes';
 
 const Tab = createBottomTabNavigator<RootStackType>();
 
@@ -20,13 +21,14 @@ const TabIcon = ({ name, color }: TabIconProps) => {
   return <Ionicons name={name} size={BOTTOM_TAB_ICON_SIZE} color={color} />;
 };
 
-const HomeNavigator = () => {
+const TabNavigator = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
         name={screenName.home.name}
-        component={Home}
+        component={HomeNavigator}
         options={{
+          headerShown: false,
           tabBarIcon: ({ focused, color }) => (
             <TabIcon name={focused ? 'home' : 'home-outline'} color={color} />
           ),
@@ -51,6 +53,6 @@ const HomeNavigator = () => {
 const MainNavigator = () => {
   const { isLoggedIn } = useAppSelector(state => state.user);
 
-  return <>{isLoggedIn ? <HomeNavigator /> : <AuthNavigator />}</>;
+  return <>{isLoggedIn ? <TabNavigator /> : <AuthNavigator />}</>;
 };
 export default MainNavigator;
