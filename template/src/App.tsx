@@ -10,9 +10,9 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 // App level configuration
-import MainNavigator from '@src/navigations/MainNavigator';
-import { persistor, store } from '@src/redux/store';
-import { DarkTheme, DefaultTheme } from '@src/theme/theme';
+import { DarkTheme, DefaultTheme } from './theme/theme';
+import { persistor, store } from './redux/store';
+import MainNavigator from './navigations/MainNavigator';
 
 /**
  * Main App component

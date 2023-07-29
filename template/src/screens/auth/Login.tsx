@@ -1,6 +1,5 @@
-import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
   Image,
@@ -13,13 +12,13 @@ import {
 } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
-import Button from '@src/components/Buttons';
-import Input from '@src/components/Input';
-import images from '@src/config/image';
-import { AuthStackNavigatorProps } from '@src/types/navigation';
-import { useAppTheme } from '@src/theme/theme';
-import { useAppDispatch } from '@src/redux/store';
-import { login } from '@src/redux/actions';
+import Button from '~/components/Buttons';
+import Input from '~/components/Input';
+import images from '~/config/image';
+import { login } from '~/redux/actions';
+import { useAppDispatch } from '~/redux/store';
+import { useAppTheme } from '~/theme/theme';
+import { AuthStackNavigatorProps } from '~/types/navigation';
 
 const Login = () => {
   const theme = useAppTheme();

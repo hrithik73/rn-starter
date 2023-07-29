@@ -12,11 +12,11 @@ import {
 } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
-import Button from '@src/components/Buttons';
-import Input from '@src/components/Input';
-import images from '@src/config/image';
-import { AuthStackNavigatorProps } from '@src/types/navigation';
-import { useAppTheme } from '@src/theme/theme';
+import Button from '~/components/Buttons';
+import Input from '~/components/Input';
+import images from '~/config/image';
+import { useAppTheme } from '~/theme/theme';
+import { AuthStackNavigatorProps } from '~/types/navigation';
 
 const SignUp = () => {
   const theme = useAppTheme();

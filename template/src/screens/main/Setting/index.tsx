@@ -2,12 +2,12 @@ import React from 'react';
 import { Image, Linking, Pressable, Text, View } from 'react-native';
 import { Divider, Switch } from 'react-native-paper';
 
-import Button from '@src/components/Buttons';
-import { toggleTheme } from '@src/redux/actions';
-import { useAppDispatch, useAppSelector } from '@src/redux/store';
-import { useAppTheme } from '@src/theme/theme';
+import Button from '~/components/Buttons';
+import images from '~/config/image';
+import { toggleTheme } from '~/redux/actions';
+import { useAppDispatch, useAppSelector } from '~/redux/store';
+import { useAppTheme } from '~/theme/theme';
 import makeStyles from './styles';
-import images from '@src/config/image';
 
 const REPO_URL = 'https://github.com/hrithik73/rn-starter';
 

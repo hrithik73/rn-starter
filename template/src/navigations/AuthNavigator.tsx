@@ -1,10 +1,10 @@
-import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
 
-import { AuthStackType } from '@src/types/navigation';
-import { screenName } from '@src/constants/screen';
-import Login from '@src/screens/auth/Login';
-import SignUp from '@src/screens/auth/SignUp';
+import { screenName } from '~/constants/screen';
+import Login from '~/screens/auth/Login';
+import SignUp from '~/screens/auth/SignUp';
+import { AuthStackType } from '~/types/navigation';
 
 const Auth = createNativeStackNavigator<AuthStackType>();
 

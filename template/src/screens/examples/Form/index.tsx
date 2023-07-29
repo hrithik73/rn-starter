@@ -1,8 +1,8 @@
-import { useAppTheme } from '@src/theme/theme';
 import { useForm } from 'react-hook-form';
 import { Text, View } from 'react-native';
 
-import Input from '@src/components/Input';
+import Input from '~/components/Input';
+import { useAppTheme } from '~/theme/theme';
 import makeStyles from './styles';
 
 const Form = () => {

@@ -2,10 +2,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import { BOTTOM_TAB_ICON_SIZE } from '@src/constants/appConstant';
-import { screenName } from '@src/constants/screen';
-import { useAppSelector } from '@src/redux/store';
-import { RootStackType } from '@src/types/navigation';
+import { BOTTOM_TAB_ICON_SIZE } from '~/constants/appConstant';
+import { screenName } from '~/constants/screen';
+import { useAppSelector } from '~/redux/store';
+import { RootStackType } from '~/types/navigation';
 import AuthNavigator from './AuthNavigator';
 import HomeNavigator from './HomeNavigator';
 import { Setting } from './routes';

@@ -1,11 +1,10 @@
-import images from '@src/config/image';
-import { useAppTheme } from '@src/theme/theme';
 import React from 'react';
-import { FlatList, Image, Linking, Pressable, Text, View } from 'react-native';
-
-import makeStyles from './styles';
-import { ExampleScreens } from '@src/constants/screen';
+import { FlatList, Pressable, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+
+import { ExampleScreens } from '~/constants/screen';
+import { useAppTheme } from '~/theme/theme';
+import makeStyles from './styles';
 
 const ScreenCard = ({ item }: any) => {
   const theme = useAppTheme();

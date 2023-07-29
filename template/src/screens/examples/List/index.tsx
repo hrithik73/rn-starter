@@ -1,15 +1,14 @@
 import axios from 'axios';
 import React from 'react';
-import { useInfiniteQuery } from 'react-query';
-
-import { useAppTheme } from '@src/theme/theme';
 import { FlatList, Text, View } from 'react-native';
 import { ActivityIndicator, MD2Colors } from 'react-native-paper';
+import { useInfiniteQuery } from 'react-query';
+
+import { SWAPI_URL } from '~/constants/appConstant';
+import { useAppTheme } from '~/theme/theme';
 import makeStyles from './styles';
 
-const URL = 'https://swapi.dev/api/people';
-
-const getPeople = async (url: string = URL) => {
+const getPeople = async (url: string = SWAPI_URL) => {
   return axios.get(url);
 };
 
@@ -19,7 +18,7 @@ const List = () => {
 
   const { data, isLoading, fetchNextPage, isFetchingNextPage, hasNextPage } =
     useInfiniteQuery('people', ({ pageParam }) => getPeople(pageParam), {
-      getNextPageParam: (lastPage, page) => {
+      getNextPageParam: lastPage => {
         if (lastPage.data.next) {
           return lastPage.data.next;
         }

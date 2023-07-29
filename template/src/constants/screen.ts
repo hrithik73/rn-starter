@@ -1,6 +1,5 @@
-import { Home } from '@src/navigations/routes';
-import Form from '@src/screens/examples/Form';
-import List from '@src/screens/examples/List';
+import Form from '~/screens/examples/Form';
+import List from '~/screens/examples/List';
 
 export const screenName = {
   login: {

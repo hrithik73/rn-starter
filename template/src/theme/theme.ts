@@ -7,7 +7,7 @@ import {
   DefaultTheme as PaperDefaultTheme,
   useTheme,
 } from 'react-native-paper';
-import { darkColors, lightColors } from '@src/constants/colors';
+import { darkColors, lightColors } from '~/constants/colors';
 
 const CombinedDefaultTheme = {
   ...PaperDefaultTheme,
