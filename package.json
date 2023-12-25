@@ -1,0 +1,27 @@
+{
+  "name": "@hrithik73/rn-starter",
+  "version": "0.0.8",
+  "description": "React Native Boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hrithik73/rn-starter.git"
+  },
+  "author": "Hritik Singh <shrithik404@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hrithik73/rn-starter/issues"
+  },
+  "homepage": "https://github.com/hrithik73/rn-starter#readme",
+  "main": "script.js",
+  "devDependencies": {},
+  "keywords": [
+    "React Native",
+    "React",
+    "Redux",
+    "Starter",
+    "Boilerplate"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
