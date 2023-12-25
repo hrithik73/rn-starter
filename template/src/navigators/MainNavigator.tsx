@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import {RootStackType} from '~/types/navigation';
 import AuthNavigator from './AuthNavigator';
@@ -15,8 +15,7 @@ interface TabIconProps {
 }
 
 const TabIcon = ({name, color}: TabIconProps) => {
-  // return <Ionicons name={name} size={BOTTOM_TAB_ICON_SIZE} color={color} />;
-  return null;
+  return <Icon name={name} size={25} color={color} />;
 };
 
 const TabNavigator = () => {
@@ -28,7 +27,7 @@ const TabNavigator = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({focused, color}) => (
-            <TabIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <TabIcon name={'home'} color={color} />
           ),
         }}
       />
@@ -37,10 +36,7 @@ const TabNavigator = () => {
         component={Setting}
         options={{
           tabBarIcon: ({focused, color}) => (
-            <TabIcon
-              name={focused ? 'settings' : 'settings-outline'}
-              color={color}
-            />
+            <TabIcon name={'user-alt'} color={color} />
           ),
         }}
       />

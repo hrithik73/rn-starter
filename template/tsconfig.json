@@ -11,6 +11,7 @@
     "jsx": "react-native",
     "noEmit": true,
     "isolatedModules": true,
+    "noImplicitAny": false,
 
     /* Strict Type-Checking Options */
     "strict": true,

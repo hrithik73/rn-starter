@@ -21,6 +21,7 @@
     "react-native-paper": "^5.11.4",
     "react-native-safe-area-context": "^4.8.2",
     "react-native-screens": "^3.29.0",
+    "react-native-vector-icons": "^10.0.3",
     "react-query": "^3.39.3",
     "react-redux": "^9.0.4",
     "redux-logger": "^3.0.6",
