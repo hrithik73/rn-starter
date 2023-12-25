@@ -1,15 +1,8 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import Home from '~/screens/home';
 
 const App = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Hello World</Text>
-    </View>
-  );
+  return <Home />;
 };
 
-const styles = StyleSheet.create({
-  container: {},
-});
 export default App;
