@@ -66,3 +66,7 @@ package-lock.json
 
 # testing
 /coverage
+
+# Custom 
+.env
+
