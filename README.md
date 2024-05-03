@@ -11,6 +11,12 @@ An opinionated React Native template with commonly used libraries to kickstart y
 To create a new app using this template, run the following command:
 
 ```
+npx react-native init MyApp --template @hrithik73/rn-starter
+```
+
+or
+
+```
 npx react-native init MyApp --template https://github.com/hrithik73/react-native-starter
 ```
 
